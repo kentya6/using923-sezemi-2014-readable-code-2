@@ -19,8 +19,8 @@ public class RecipeProgram {
         try{
             recipe = recipeBufferedReader.readLine();
             System.out.println(recipe);
-        } catch(Exception e){
-            e.printStackTrace();
+        } catch(IOException recipeReadException){
+            recipeReadException.printStackTrace();
         }
 
     }
