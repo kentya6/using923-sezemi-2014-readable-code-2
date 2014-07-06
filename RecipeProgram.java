@@ -16,6 +16,7 @@ public class RecipeProgram {
         FileReader recipeFileReader = new FileReader(recipeFile);
         BufferedReader recipeBufferedReader =
                 new BufferedReader(recipeFileReader);
+        int recipeId=1;
         
         try{
             while(true){
@@ -24,8 +25,9 @@ public class RecipeProgram {
                 if(recipe == null){
                     break;
                 }
-                System.out.println(recipe);
                 
+                System.out.println(recipeId+":"+recipe);
+                recipeId++;
             }
         } catch(IOException recipeReadException){
             recipeReadException.printStackTrace();
