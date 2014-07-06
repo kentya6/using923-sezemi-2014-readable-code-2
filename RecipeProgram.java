@@ -8,6 +8,7 @@ import java.io.IOException;
 public class RecipeProgram {
 
     public static void main(String args[]) throws FileNotFoundException {
+        
         // レシピデータハンドリング系の変数には必ずrecipeとつける
         String recipe;
         String recipeFilePath = args[0];
@@ -17,8 +18,15 @@ public class RecipeProgram {
                 new BufferedReader(recipeFileReader);
         
         try{
-            recipe = recipeBufferedReader.readLine();
-            System.out.println(recipe);
+            while(true){
+                recipe = recipeBufferedReader.readLine();
+                
+                if(recipe == null){
+                    break;
+                }
+                System.out.println(recipe);
+                
+            }
         } catch(IOException recipeReadException){
             recipeReadException.printStackTrace();
         }
